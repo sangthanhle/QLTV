@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MongoDBCRUD.Models.GiaHanEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    button {
+        border-radius: 13px;
+        border-color: lightblue;
+        border-style: groove;
+        background-color: powderblue;
+    }
+
+        button:hover {
+            background-color: lightsteelblue;
+        }
+
+    .table {
+        background-image: url("https://i.ex-cdn.com/nhadautu.vn/files/content/2019/08/03/bookstagram-backgrounds-bed-15647383556051871074674-crop-1564738360494228345737-0243.jpg");
+        background-size: cover;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+<h1>GIA HẠN</h1>
+
+<p>
+    <a asp-action="Create">THÊM MỚI</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENDG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENSACH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TUNGAY)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DENNGAY)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENDG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TUNGAY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DENNGAY)
+            </td>
+            <td>
+              <button>  @Html.ActionLink("Edit", "Edit", new {  Name=item.TENDG }) | </button>
+              <button> @Html.ActionLink("Details", "Details", new { Name = item.TENDG }) | </button>
+              <button>    @Html.ActionLink("Delete", "Delete", new { Name = item.TENDG }) </button>
+</td>
+        </tr>
+}
+    </tbody>
+</table>

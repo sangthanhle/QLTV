@@ -1,0 +1,75 @@
+﻿@model MongoDBCRUD.Models.BookEntity
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    button {
+        border-radius: 13px;
+        border-color: lightblue;
+        border-style: groove;
+        background-color: powderblue;
+    }
+
+        button:hover {
+            background-color: lightsteelblue;
+        }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<h1>Details</h1>
+
+<div>
+    <h4>BookEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model._id)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model._id)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MASACH)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MASACH)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TENSACH)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TENSACH)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.THELOAI)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.THELOAI)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TACGIA)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TACGIA)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NGAYXB)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NGAYXB)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SOLUONG)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SOLUONG)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

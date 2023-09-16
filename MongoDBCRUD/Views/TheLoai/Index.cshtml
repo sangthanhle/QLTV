@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MongoDBCRUD.Models.TheLoaiEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    button {
+        border-radius: 13px;
+        border-color: lightblue;
+        border-style: groove;
+        background-color: powderblue;
+    }
+
+        button:hover {
+            background-color: lightsteelblue;
+        }
+
+    .table {
+        background-image: url("https://quatangtiny.com/wp-content/uploads/2021/09/moi-ngay-mot-trang-sach.jpg");
+        background-size: cover;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<h1>THỂ LOẠI</h1>
+
+<p>
+    <a asp-action="Create">THÊM MỚI</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MATHELOAI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENTHELOAI)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MATHELOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENTHELOAI)
+            </td>
+            <td>
+                <button>  @Html.ActionLink("Edit", "Edit", new { Name = item.MATHELOAI }) |</button>
+                <button> @Html.ActionLink("Details", "Details", new { Name = item.MATHELOAI }) </button>
+                <button> @Html.ActionLink("Delete", "Delete", new { Name = item.MATHELOAI })</button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

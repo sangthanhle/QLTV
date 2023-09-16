@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MongoDBCRUD.Models.BookEntity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>SÁCH</h1>
+<style>
+    button {
+        border-radius: 13px;
+        border-color: lightblue;
+        border-style: groove;
+        background-color: powderblue;
+    }
+
+        button:hover {
+            background-color: lightsteelblue;
+        }
+
+    .table {
+        background-image: url("https://cdn.123job.vn/123job/uploads/2021/05/27/2021_05_27______d326ed021ef9c5f7dbe5ad589bf9d036.jpeg");
+        background-size: cover;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+
+<p>
+    <a asp-action="Create">TẠO MỚI</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MASACH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENSACH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.THELOAI)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TACGIA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGAYXB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SOLUONG)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MASACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.THELOAI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TACGIA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYXB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SOLUONG)
+            </td>
+            <td>
+                <button> @Html.ActionLink("Edit", "Edit", new { Name = item.TENSACH }) </button>
+                <button>   @Html.ActionLink("Details", "Details", new { Name = item.TENSACH }) </button>
+                <button> @Html.ActionLink("Delete", "Delete", new { Name = item.TENSACH })</button>
+</td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,63 @@
+﻿@model MongoDBCRUD.Models.ReaderEntity
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>ReaderEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditPost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="_id" class="control-label"></label>
+                <input asp-for="_id" class="form-control" />
+                <span asp-validation-for="_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MADG" class="control-label"></label>
+                <input asp-for="MADG" class="form-control" />
+                <span asp-validation-for="MADG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TENDG" class="control-label"></label>
+                <input asp-for="TENDG" class="form-control" />
+                <span asp-validation-for="TENDG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DCHI" class="control-label"></label>
+                <input asp-for="DCHI" class="form-control" />
+                <span asp-validation-for="DCHI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NGSINH" class="control-label"></label>
+                <input asp-for="NGSINH" class="form-control" />
+                <span asp-validation-for="NGSINH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SODT" class="control-label"></label>
+                <input asp-for="SODT" class="form-control" />
+                <span asp-validation-for="SODT" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NGDK" class="control-label"></label>
+                <input asp-for="NGDK" class="form-control" />
+                <span asp-validation-for="NGDK" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

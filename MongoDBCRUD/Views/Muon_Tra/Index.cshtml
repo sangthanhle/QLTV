@@ -1,0 +1,100 @@
+﻿@model IEnumerable<MongoDBCRUD.Models.Muon_Tra_Entity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    button {
+        border-radius: 13px;
+        border-color: lightblue;
+        border-style: groove;
+        background-color: powderblue;
+    }
+
+        button:hover {
+            background-color: lightsteelblue;
+        }
+
+    .table {
+        background-image: url("https://png.pngtree.com/background/20210710/original/pngtree-creative-synthesis-simple-book-education-and-training-background-picture-image_1048845.jpg");
+        background-size: cover;
+        color: black;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+</style>
+<h1>MƯỢN TRẢ</h1>
+
+<p>
+    <a asp-action="Create">THÊM MỚI</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model._id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENDG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TENSACH)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGMUON)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGQDTRA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NGTRA)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PHATQH)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENDG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENSACH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGMUON)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGQDTRA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGTRA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHATQH)
+            </td>
+            <td>
+             <button>   @Html.ActionLink("Edit", "Edit", new { Name = item.TENDG }) |</button>
+             <button>
+                 @Html.ActionLink("Details", "Details", new { Name = item.TENDG }) |
+             </button>
+             <button>     @Html.ActionLink("Delete", "Delete", new { Name = item.TENDG })</button>
+</td>
+        </tr>
+}
+    </tbody>
+</table>

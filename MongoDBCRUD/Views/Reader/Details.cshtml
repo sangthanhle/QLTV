@@ -1,0 +1,60 @@
+﻿@model MongoDBCRUD.Models.ReaderEntity
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ReaderEntity</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model._id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model._id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MADG)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MADG)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TENDG)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TENDG)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DCHI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DCHI)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NGSINH)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NGSINH)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SODT)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SODT)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NGDK)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NGDK)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

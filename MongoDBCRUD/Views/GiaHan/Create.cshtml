@@ -1,0 +1,53 @@
+﻿@model MongoDBCRUD.Models.GiaHanEntity
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>GiaHanEntity</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreatePost">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="_id" class="control-label"></label>
+                <input asp-for="_id" class="form-control" />
+                <span asp-validation-for="_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TENDG" class="control-label"></label>
+                <input asp-for="TENDG" class="form-control" />
+                <span asp-validation-for="TENDG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TENSACH" class="control-label"></label>
+                <input asp-for="TENSACH" class="form-control" />
+                <span asp-validation-for="TENSACH" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TUNGAY" class="control-label"></label>
+                <input asp-for="TUNGAY" class="form-control" />
+                <span asp-validation-for="TUNGAY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DENNGAY" class="control-label"></label>
+                <input asp-for="DENNGAY" class="form-control" />
+                <span asp-validation-for="DENNGAY" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
